@@ -5,22 +5,12 @@
 	 	 
 	<target name="clean">
 		<echo msg="Cleaning directories" />
-		<delete dir="packages" includeemptydirs="true" />
-		<delete>		
-			<fileset dir=".">
-    			<include name="*.zip" />
-  			</fileset>
-			<fileset dir="./mod_vdlanguage">
-				<include name="*.zip" />
-			</fileset>
-  		</delete>
+		<delete dir="build" includeemptydirs="true" />
 	</target>
-
 
 	<target name="build-all">
 		<phingcall target="clean" />
 		<phingcall target="build" />
-
 	</target>
 
 	<target name="build">
@@ -35,11 +25,6 @@
             <include name="pkg_virtualdomains.xml/**" />
           </fileset>
         </copy>
-		
-		<!--<copy file="build/com_virtualdomains.xml" tofile="com_virtualdomains/com_virtualdomains.xml" overwrite="true"/>
-		<copy file="build/mod_vdlanguage.xml" tofile="mod_vdlanguage/mod_vdlanguage.xml" overwrite="true"/>
-    	<copy file="build/virtualdomains.xml" tofile="plg_virtualdomains/virtualdomains.xml" overwrite="true"/>
-    	<copy file="build/pkg_virtualdomains.xml" tofile="pkg_virtualdomains.xml" overwrite="true"/>-->
 
         <reflexive>
             <fileset dir="build">
