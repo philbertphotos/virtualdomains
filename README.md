@@ -3,8 +3,8 @@ Multi Domain Support for Joomla
 
 ## Installation
 
-Download the latest release from the [Releases](https://github.com/smehrbrodt/virtualdomains/releases) section.
-Then install the package in Joomla.
+Download the [latest release](https://github.com/smehrbrodt/virtualdomains/releases/latest) and install the package in Joomla.
+Future updates should be available via the Joomla Extension update mechanism.
 
 ## Building
 To build the package, use Phing:
