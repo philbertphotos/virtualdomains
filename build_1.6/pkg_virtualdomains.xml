@@ -43,10 +43,6 @@
 	<div>For Multilanguage Sites it is required to replace Joomlas Language switcher module with &quot;VD Language switcher&quot;.</div>
 	<br />
 		]]></description>
-	
-	<updateservers>
-		<server type="extension" priority="1" name="Virtualdomains Updates">http://janguo.de/lang-en/updates?id=2</server>
-	</updateservers>
 	<files folder="packages">
 		<file type="plugin" id="virtualdomains" group="system">plg_virtualdomains.zip</file>
 		<file type="component" id="com_virtualdomains" >com_virtualdomains.zip</file>

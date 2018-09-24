@@ -60,9 +60,5 @@
 						<language tag="bg-BG">language/bg-BG/bg-BG.com_virtualdomains.sys.ini</language>												
 	</languages>					
 
-	</administration>        
-	<updateservers>
-                <server type="extension" priority="1" name="Virtualdomains Update Site">http://janguo.de/vd/update/vd-update.xml</server>
- 	</updateservers>
-	      	
+	</administration>	      	
 </extension>
