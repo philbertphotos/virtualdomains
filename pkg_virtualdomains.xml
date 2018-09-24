@@ -77,4 +77,8 @@
               id="mod_vdlanguage"
               client="site">mod_vdlanguage.zip</file>
     </files>
+    
+    <updateservers>
+        <server type="extension" priority="1" name="Virtual Domains Updates">https://raw.githubusercontent.com/smehrbrodt/virtualdomains/master/updateserver/vd-update.xml</server>
+    </updateservers>
 </extension>
