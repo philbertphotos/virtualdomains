@@ -16,7 +16,7 @@
 		<maintainer>Samuel Mehrbrodt</maintainer>
 		<maintainerurl>https://github.com/smehrbrodt/virtualdomains</maintainerurl>
 		<section>multiple-sites</section>
-		<targetplatform name="joomla" version="3.1" />
+		<targetplatform name="joomla" version="3.[0123456789]" />
 		<client>administrator</client>
 		<folder />
 	</update>
@@ -36,7 +36,7 @@
 		<maintainer>Samuel Mehrbrodt</maintainer>
 		<maintainerurl>https://github.com/smehrbrodt/virtualdomains</maintainerurl>
 		<section>multiple-sites</section>
-		<targetplatform name="joomla" version="3.1" />
+		<targetplatform name="joomla" version="3.[0123456789]" />
 		<client>administrator</client>
 		<folder />
 	</update>
