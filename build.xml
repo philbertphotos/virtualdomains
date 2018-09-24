@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="package_vd_build" default="build-all">
-	<property name="revisionx" value="206" override="true"/>
 	 <property name="package" value="pkg_virtualdomains" override="true"/>	
 	 <php expression="trim(file_get_contents('version'))" returnProperty="vd.version" />  
 	 	 
@@ -26,24 +25,49 @@
 
 	<target name="build">
 		<echo msg="Building package" />
-		<mkdir dir="packages" />
-		<copy file="build_1.6/com_virtualdomains.xml" tofile="com_virtualdomains/com_virtualdomains.xml" overwrite="true"/>		
+		<mkdir dir="build" />
 		
-		<zip destfile="packages/com_virtualdomains.zip" basedir="com_virtualdomains" />
-		<zip destfile="packages/plg_virtualdomains.zip" basedir="plg_virtualdomains" />
-		<zip destfile="packages/mod_vdlanguage.zip" basedir="mod_vdlanguage" />
+		<copy todir="build" >
+          <fileset dir=".">
+            <include name="com_virtualdomains/**" />
+            <include name="mod_vdlanguage/**" />
+            <include name="plg_virtualdomains/**" />
+            <include name="pkg_virtualdomains.xml/**" />
+          </fileset>
+        </copy>
+		
+		<!--<copy file="build/com_virtualdomains.xml" tofile="com_virtualdomains/com_virtualdomains.xml" overwrite="true"/>
+		<copy file="build/mod_vdlanguage.xml" tofile="mod_vdlanguage/mod_vdlanguage.xml" overwrite="true"/>
+    	<copy file="build/virtualdomains.xml" tofile="plg_virtualdomains/virtualdomains.xml" overwrite="true"/>
+    	<copy file="build/pkg_virtualdomains.xml" tofile="pkg_virtualdomains.xml" overwrite="true"/>-->
 
-		<copy file="build_1.6/pkg_virtualdomains.xml" tofile="pkg_virtualdomains.xml" overwrite="true"/>
+        <reflexive>
+            <fileset dir="build">
+                <include name="com_virtualdomains/com_virtualdomains.xml"/>
+                <include name="mod_vdlanguage/mod_vdlanguage.xml"/>
+                <include name="plg_virtualdomains/virtualdomains.xml"/>
+                <include name="pkg_virtualdomains.xml"/>
+            </fileset>
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern="{VERSION}" replace="${vd.version}"/>
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
 		
-		<zip destfile="${package}-${vd.version}-j3-r${revisionx}.zip">
-			<fileset dir=".">
-				<include name="packages/**" />
+		<zip destfile="build/com_virtualdomains.zip" basedir="build/com_virtualdomains" />
+		<zip destfile="build/plg_virtualdomains.zip" basedir="build/plg_virtualdomains" />
+		<zip destfile="build/mod_vdlanguage.zip" basedir="build/mod_vdlanguage" />
+		
+		<mkdir dir="dist" />
+		<zip destfile="dist/${package}-${vd.version}.zip">
+			<fileset dir="build">
+				<include name="*.zip" />
 				<include name="pkg_virtualdomains.xml" />
 			</fileset>
 		</zip>
-		<delete file="pkg_virtualdomains.xml" />
-		
-		<delete dir="packages" includeemptydirs="true" />
+
+		<delete dir="build" includeemptydirs="true" />
 	</target>
 	
 </project>

@@ -11,7 +11,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>michael-liebler@janguo.de</authorEmail>
 	<authorUrl>www.janguo.de</authorUrl>
-	<version>1.1.0</version>
+	<version>{VERSION}</version>
 	<description>MOD_LANGUAGES_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_vdlanguage">mod_vdlanguage.php</filename>
