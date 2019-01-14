@@ -1,5 +1,7 @@
 # Virtual Domains
-Multi Domain Support for Joomla
+Multi Domain Support for Joomla.
+
+A fork that supports PHP 7.1 and later.
 
 ## Installation
 
