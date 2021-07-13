@@ -5,7 +5,8 @@ jQuery.noConflict();
 		$('.hostcheck').each(function() {
 			var curelem = $(this);
 			var host = $(curelem).attr('data-host');
-			var url = 'http://' + host + '/index.php?option=com_virtualdomains';
+			var proto = window.location.protocol;
+			var url = proto + '//' + host + '/index.php?option=com_virtualdomains';
 			 $.getJSON( url).done(function( response ) {
 				 var data = jQuery.parseJSON(response);
 				 if(host == data.hostname) {
